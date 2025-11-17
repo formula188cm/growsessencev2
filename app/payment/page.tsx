@@ -9,15 +9,17 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { CheckCircle2 } from "lucide-react"
 
-const ENABLE_ONLINE_PAYMENT = false
+const ENABLE_ONLINE_PAYMENT = true
 
 const WHATSAPP_NUMBER = "917304217506"
 const SUPPORT_EMAIL = "growessence09@gmail.com"
-const RAZORPAY_LINKS: Record<number, string> = {
-  799: "https://rzp.io/l/growessence-799",
-  1598: "https://rzp.io/l/growessence-1598",
-  2397: "https://rzp.io/l/growessence-2397",
-  3196: "https://rzp.io/l/growessence-3196",
+
+// Cosmofeed / SuperProfile payment links for different quantities
+const COSMOFEED_LINKS_BY_QUANTITY: Record<number, string> = {
+  1: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation",
+  2: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-161",
+  3: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-744",
+  4: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-340",
 }
 
 function PaymentContent() {
@@ -28,7 +30,11 @@ function PaymentContent() {
 
   const [showSuccess, setShowSuccess] = useState(false)
   const totalNumber = Number(total) || 0
-  const razorpayLink = ENABLE_ONLINE_PAYMENT ? RAZORPAY_LINKS[totalNumber] : undefined
+  const quantityNumber = Number(quantity) || 1
+  const cosmofeedLink =
+    ENABLE_ONLINE_PAYMENT && COSMOFEED_LINKS_BY_QUANTITY[quantityNumber]
+      ? COSMOFEED_LINKS_BY_QUANTITY[quantityNumber]
+      : undefined
   const onlineTemporarilyDisabled = !ENABLE_ONLINE_PAYMENT && method === "online"
 
   const openWhatsApp = () => {
@@ -111,12 +117,13 @@ function PaymentContent() {
             </div>
           </div>
 
-          {/* Payment Methods */}
+          {/* Online Payment via Cosmofeed */}
           {ENABLE_ONLINE_PAYMENT && method === "online" && (
             <div className="p-6 md:p-8 border-2 border-primary/30 rounded-xl bg-primary/5 mb-12">
-              <h3 className="text-2xl font-bold mb-3">Pay Securely with Razorpay</h3>
+              <h3 className="text-2xl font-bold mb-3">Pay Securely with Cosmofeed</h3>
               <p className="text-muted-foreground mb-6">
-                Complete your UPI or card payment instantly through Razorpay. The payment link opens in a new tab.
+                Complete your UPI or card payment instantly through our Cosmofeed payment page. The payment link opens in a
+                new tab.
               </p>
 
               <div className="grid gap-4 md:grid-cols-2 mb-6">
@@ -130,15 +137,15 @@ function PaymentContent() {
                 </div>
               </div>
 
-              {razorpayLink ? (
+              {cosmofeedLink ? (
                 <div className="space-y-4">
                   <a
-                    href={razorpayLink}
+                    href={cosmofeedLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
                   >
-                    Pay ₹{total} via Razorpay
+                    Pay ₹{total} via Cosmofeed
                   </a>
                   <button
                     onClick={() => {
@@ -153,13 +160,13 @@ function PaymentContent() {
                 <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-900">
                   <p className="font-semibold mb-2">Payment link unavailable for this amount.</p>
                   <p>
-                    Please reach out to us on WhatsApp so we can share a Razorpay link for ₹{total}.
+                    Please reach out to us on WhatsApp so we can share the correct Cosmofeed payment link for ₹{total}.
                   </p>
                 </div>
               )}
 
               <p className="text-xs text-muted-foreground mt-4">
-                Tip: Save your Razorpay receipt or screenshot for quick confirmation with our team.
+                Tip: Save your Cosmofeed receipt or screenshot for quick confirmation with our team.
               </p>
             </div>
           )}

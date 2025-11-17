@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { generateOrderId, submitToGoogleSheets } from "@/lib/google-sheets"
 
-const ENABLE_ONLINE_PAYMENT = false
+const ENABLE_ONLINE_PAYMENT = true
 
 function CheckoutContent() {
   const searchParams = useSearchParams()
@@ -22,7 +22,7 @@ function CheckoutContent() {
 
 
 
-  const [paymentMethod, setPaymentMethod] = useState<"online" | "cod" | null>(ENABLE_ONLINE_PAYMENT ? null : "cod")
+  const [paymentMethod, setPaymentMethod] = useState<"online" | "cod" | null>(ENABLE_ONLINE_PAYMENT ? "online" : "cod")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
@@ -97,7 +97,23 @@ function CheckoutContent() {
             orderId,
           }),
         )
-        window.location.href = `/payment?total=${totalPrice}&method=${paymentMethod}&quantity=${quantity}&orderId=${orderId}`
+
+        // Redirect based on payment method
+        if (paymentMethod === "online") {
+          // Map quantity to Cosmofeed / SuperProfile payment pages
+          const cosmofeedLinks: Record<number, string> = {
+            1: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation",
+            2: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-161",
+            3: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-744",
+            4: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-340",
+          }
+
+          const targetUrl = cosmofeedLinks[quantity] || cosmofeedLinks[1]
+          window.location.href = targetUrl
+        } else {
+          // COD flow goes to internal payment confirmation screen
+          window.location.href = `/payment?total=${totalPrice}&method=${paymentMethod}&quantity=${quantity}&orderId=${orderId}`
+        }
       } else {
         setSubmitError(result.message)
       }
@@ -142,9 +158,11 @@ function CheckoutContent() {
                       >
                         <div className="flex items-center gap-2 md:gap-3 mb-2">
                           <input type="radio" checked={paymentMethod === "online"} readOnly />
-                          <h3 className="font-semibold text-sm md:text-base">Online Payment (Razorpay)</h3>
+                          <h3 className="font-semibold text-sm md:text-base">Online Payment (Cosmofeed)</h3>
                         </div>
-                        <p className="text-xs md:text-sm text-muted-foreground ml-7">Instant UPI, cards & wallets via Razorpay</p>
+                        <p className="text-xs md:text-sm text-muted-foreground ml-7">
+                          Instant UPI, cards & wallets via Cosmofeed secure payment page
+                        </p>
                         <p className="text-base md:text-lg font-bold text-primary mt-2 ml-7">₹{BASE_PRICE}</p>
                       </div>
                     ) : (
