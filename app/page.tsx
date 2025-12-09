@@ -1,14 +1,18 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, Suspense } from "react"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ProductCarousel } from "@/components/product-carousel"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Volume2, VolumeX, ChevronLeft, ChevronRight, Play, Pause, Star, StarHalf } from "lucide-react"
+import { useReferralCode } from "@/hooks/useReferralCode"
 
-export default function Home() {
+function HomeContent() {
+  // Initialize referral tracking on home page
+  useReferralCode()
+
   const scrollToSection = () => {
     document.getElementById("benefits")?.scrollIntoView({ behavior: "smooth" })
   }
@@ -490,5 +494,13 @@ export default function Home() {
       <Footer />
       <WhatsAppButton />
     </div>
+  )
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+      <HomeContent />
+    </Suspense>
   )
 }

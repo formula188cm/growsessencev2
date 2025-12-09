@@ -1,8 +1,2090 @@
-[00:00:10.755] Server  LOG      ✓ Ready in 8s
-[00:00:22.381] Server  LOG      ○ Compiling / ...
-[00:00:35.968] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:46.805] Server  LOG      ○ Compiling /product ...
-[00:01:44.853] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:10.344] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:48.824] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:37.688] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.072] Server  LOG      ✓ Ready in 3.2s
+[00:00:27.112] Server  LOG      ○ Compiling / ...
+[00:01:50.850] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:00.738] Server  LOG      ○ Compiling /product ...
+[00:02:11.629] Server  LOG      ○ Compiling /checkout ...
+[00:13:20.613] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:51.069] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:30.790] Server  LOG      ✓ Compiled in 2.3s
+[00:16:41.927] Server  LOG      ✓ Compiled in 526ms
+[00:16:57.596] Server  LOG      ✓ Compiled in 339ms
+[00:17:02.409] Server  LOG      ✓ Compiled in 176ms
+[00:17:02.524] Server  ERROR   (node:15680) Warning: Failed to load the ES module: D:\formula188cmtabletnewdesign-main\formula188cmtabletnewdesign-main\.next\dev\server\chunks\ssr\[root-of-the-server]__4365e01f._.js. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[00:17:02.712] Server  ERROR    ⨯ Error: Failed to load chunk server/chunks/ssr/[root-of-the-server]__4365e01f._.js from runtime for chunk server/app/checkout/page.js
+[00:17:02.726] Server  ERROR   (node:15680) Warning: Failed to load the ES module: D:\formula188cmtabletnewdesign-main\formula188cmtabletnewdesign-main\.next\dev\server\chunks\ssr\[root-of-the-server]__4365e01f._.js. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+[00:17:02.876] Server  ERROR    ⨯ Error: Failed to load chunk server/chunks/ssr/[root-of-the-server]__4365e01f._.js from runtime for chunk server/app/checkout/page.js
+[00:17:05.723] Server  LOG      ○ Compiling /_error ...
+[00:17:23.561] Server  ERROR   (node:15680) Warning: Failed to load the ES module: D:\formula188cmtabletnewdesign-main\formula188cmtabletnewdesign-main\.next\dev\server\chunks\ssr\[root-of-the-server]__4365e01f._.js. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+[00:17:23.664] Server  ERROR    ⨯ Error: Failed to load chunk server/chunks/ssr/[root-of-the-server]__4365e01f._.js from runtime for chunk server/app/checkout/page.js
+[00:17:23.672] Server  ERROR   (node:15680) Warning: Failed to load the ES module: D:\formula188cmtabletnewdesign-main\formula188cmtabletnewdesign-main\.next\dev\server\chunks\ssr\[root-of-the-server]__4365e01f._.js. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+[00:17:23.743] Server  ERROR    ⨯ Error: Failed to load chunk server/chunks/ssr/[root-of-the-server]__4365e01f._.js from runtime for chunk server/app/checkout/page.js
+[00:17:24.614] Server  ERROR   (node:15680) Warning: Failed to load the ES module: D:\formula188cmtabletnewdesign-main\formula188cmtabletnewdesign-main\.next\dev\server\chunks\ssr\[root-of-the-server]__4365e01f._.js. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+[00:17:24.690] Server  ERROR    ⨯ Error: Failed to load chunk server/chunks/ssr/[root-of-the-server]__4365e01f._.js from runtime for chunk server/app/checkout/page.js
+[00:17:24.742] Server  ERROR   (node:15680) Warning: Failed to load the ES module: D:\formula188cmtabletnewdesign-main\formula188cmtabletnewdesign-main\.next\dev\server\chunks\ssr\[root-of-the-server]__4365e01f._.js. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+[00:17:24.815] Server  ERROR    ⨯ Error: Failed to load chunk server/chunks/ssr/[root-of-the-server]__4365e01f._.js from runtime for chunk server/app/checkout/page.js
+[00:17:25.158] Browser ERROR   uncaughtError: Error: Failed to load chunk server/chunks/ssr/[root-of-the-server]__4365e01f._.js from runtime for chunk server/app/checkout/page.js
+[00:17:25.198] Browser ERROR   uncaughtError: Error: Failed to load chunk server/chunks/ssr/[root-of-the-server]__4365e01f._.js from runtime for chunk server/app/checkout/page.js
+[00:17:26.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:26.970] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:26.970] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:26.970] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:29.955] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:29.955] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:29.955] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:29.955] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:31.967] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:31.967] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:31.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:31.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:32.954] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:32.955] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:32.971] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:32.971] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:43.968] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:43.968] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:43.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:43.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:57.306] Server  ERROR    ⨯ ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+
+./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+[00:17:57.833] Browser ERROR   uncaughtError: Error: ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+[00:17:58.064] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.064] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.064] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.064] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.968] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.968] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.968] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.968] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:17:58.969] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:25.697] Server  ERROR    ⨯ ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+
+./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+[00:18:25.965] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:25.965] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:25.965] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:25.965] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:26.001] Browser ERROR   uncaughtError: Error: ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+[00:18:26.268] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:26.268] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:26.268] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:26.268] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:26.967] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:26.967] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:26.967] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:26.967] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:38.997] Server  ERROR    ⨯ ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+
+./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+[00:18:39.288] Browser ERROR   uncaughtError: Error: ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+[00:18:39.499] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.499] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.499] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.500] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.964] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.964] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.964] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.964] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.964] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.964] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.964] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:39.964] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:43.873] Server  ERROR    ⨯ ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+
+./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+[00:18:44.041] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.042] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.104] Browser ERROR   uncaughtError: Error: ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+
+[00:18:44.220] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.220] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.255] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.255] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.333] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.333] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.971] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.971] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.971] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.971] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.973] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.973] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.973] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:18:44.973] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:48.979] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:48.979] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:49.965] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:49.965] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:49.966] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:49.966] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:49.967] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:49.967] Browser ERROR   ./formula188cmtabletnewdesign-main/app/checkout/page.tsx
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+
+Caused by:
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Debug info:
+- An error occurred while generating the chunk item [project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx [app-rsc] (client reference proxy) <module evaluation>
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Expected export to be in eval context "default" ImportMap { imports: {}, namespace_imports: {}, reexports: [], references: {}, has_imports: false, has_exports: false, has_top_level_await: false, strict: false, attributes: {}, full_star_imports: {}, exports: {} }
+
+Import traces:
+  Client Component Browser:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component Browser]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Client Component SSR]
+    ./formula188cmtabletnewdesign-main/app/checkout/page.tsx [Server Component]
+[00:19:56.464] Server  LOG      ✓ Compiled in 252ms
+[00:19:58.423] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:58.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:58.913] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:58.920] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:05.744] Server  LOG      ✓ Compiled in 423ms
+[00:20:36.807] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:18.391] Server  LOG      ✓ Compiled in 2.5s
+[00:23:32.606] Server  LOG      ✓ Compiled in 616ms
+[00:23:45.822] Server  LOG      ✓ Compiled in 7.8s
+[00:24:40.212] Server  LOG      ✓ Compiled in 334ms

@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { ProductCarousel } from "@/components/product-carousel"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Star, StarHalf } from "lucide-react"
+import { getCheckoutUrl } from "@/lib/referral-utils"
 
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1)
@@ -208,7 +209,7 @@ export default function ProductPage() {
               {/* CTA Button */}
               <div className="space-y-3 pt-4 md:pt-6">
                 <Link
-                  href={`/checkout?quantity=${quantity}`}
+                  href={getCheckoutUrl(quantity)}
                   className="block w-full px-6 md:px-8 py-3 md:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 active:scale-95 transition-all duration-200 text-center text-sm md:text-base shadow-lg hover:shadow-xl"
                 >
                   Proceed to Checkout

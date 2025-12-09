@@ -592,9 +592,13 @@ __turbopack_context__.s([
     "generateOrderId",
     ()=>generateOrderId,
     "submitToGoogleSheets",
-    ()=>submitToGoogleSheets
+    ()=>submitToGoogleSheets,
+    "submitToReferralSheet",
+    ()=>submitToReferralSheet
 ]);
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxXjEkrObDRzUN3Cm31fAbzmT6P9dpbcbXrN6VccVVXaepimrs2ynUhk5bJzVMm-_JPVw/exec";
+// Referral sheet App Script URL - REPLACE THIS WITH YOUR ACTUAL REFERRAL SHEET APP SCRIPT URL
+const REFERRAL_SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcCcsxJpa0LnV0j84gnd-hXmZetKXuhCU2Lm58uCQ99ACP9R_oIEAmnu6UPyBkq-Gt/exec";
 function generateOrderId() {
     const timestamp = Date.now().toString(36).toUpperCase();
     const random = Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -614,7 +618,7 @@ async function submitToGoogleSheets(data, orderId, sheetName = "Sheet1") {
             quantity: data.quantity,
             total: data.totalPrice,
             timestamp: new Date().toLocaleString("en-IN"),
-            orderStatus: "Pending",
+            orderStatus: "Confirmed",
             paymentMethod: data.paymentMethod,
             orderId: orderId,
             beneficiaryName: data.firstName,
@@ -634,6 +638,36 @@ async function submitToGoogleSheets(data, orderId, sheetName = "Sheet1") {
         return {
             success: false,
             message: error instanceof Error ? error.message : "Failed to submit order"
+        };
+    }
+}
+async function submitToReferralSheet(data, orderId) {
+    try {
+        // Combine address fields into full address
+        const fullAddress = `${data.address}, ${data.city}, ${data.state} ${data.pinCode}`;
+        const payloadData = {
+            id: orderId,
+            name: `${data.firstName} ${data.lastName}`,
+            phone: data.phone,
+            address: fullAddress,
+            price: data.totalPrice,
+            referralCode: data.referralCode?.toUpperCase() || "",
+            status: "Confirmed"
+        };
+        const response = await fetch(REFERRAL_SHEET_SCRIPT_URL, {
+            method: "POST",
+            body: JSON.stringify(payloadData),
+            mode: "no-cors"
+        });
+        return {
+            success: true,
+            message: "Order data submitted successfully to referral sheet"
+        };
+    } catch (error) {
+        console.error("Referral Google Sheets submission error:", error);
+        return {
+            success: false,
+            message: error instanceof Error ? error.message : "Failed to submit order to referral sheet"
         };
     }
 }
@@ -664,14 +698,14 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const ENABLE_ONLINE_PAYMENT = false;
+const ENABLE_ONLINE_PAYMENT = true;
 function CheckoutContent() {
     _s();
     const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"])();
     const quantity = Number.parseInt(searchParams.get("quantity") || "1");
     const BASE_PRICE = 799;
     const COD_SHIPPING_FEE = 89;
-    const [paymentMethod, setPaymentMethod] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : "cod");
+    const [paymentMethod, setPaymentMethod] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(("TURBOPACK compile-time truthy", 1) ? "online" : "TURBOPACK unreachable");
     const [isSubmitting, setIsSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [submitError, setSubmitError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
@@ -682,7 +716,8 @@ function CheckoutContent() {
         address: "",
         city: "",
         state: "",
-        pinCode: ""
+        pinCode: "",
+        referralCode: ""
     });
     const basePrice = BASE_PRICE;
     const shippingFee = paymentMethod === "cod" ? COD_SHIPPING_FEE : 0;
@@ -700,7 +735,7 @@ function CheckoutContent() {
         const { name, value } = e.target;
         setFormData((prev)=>({
                 ...prev,
-                [name]: value
+                [name]: name === "referralCode" ? value.toUpperCase() : value
             }));
     };
     const handleSubmit = async (e)=>{
@@ -713,6 +748,42 @@ function CheckoutContent() {
         setSubmitError(null);
         try {
             const orderId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$lib$2f$google$2d$sheets$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["generateOrderId"])();
+            // If referral code is provided, submit to referral sheet
+            if (formData.referralCode && formData.referralCode.trim() !== "") {
+                const result = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$lib$2f$google$2d$sheets$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["submitToReferralSheet"])({
+                    ...formData,
+                    paymentMethod,
+                    quantity,
+                    totalPrice
+                }, orderId);
+                if (result.success) {
+                    localStorage.setItem("checkoutData", JSON.stringify({
+                        ...formData,
+                        paymentMethod,
+                        quantity,
+                        totalPrice,
+                        orderId
+                    }));
+                    // Redirect based on payment method
+                    if (paymentMethod === "online") {
+                        const cosmofeedLinks = {
+                            1: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation",
+                            2: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-161",
+                            3: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-744",
+                            4: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-340"
+                        };
+                        const targetUrl = cosmofeedLinks[quantity] || cosmofeedLinks[1];
+                        window.location.href = targetUrl;
+                    } else {
+                        window.location.href = `/payment?total=${totalPrice}&method=${paymentMethod}&quantity=${quantity}&orderId=${orderId}`;
+                    }
+                    return;
+                } else {
+                    setSubmitError(result.message);
+                    return;
+                }
+            }
+            // No referral code - submit to regular sheet
             const sheetName = paymentMethod === "online" ? "Sheet1" : "Sheet2";
             const result = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$lib$2f$google$2d$sheets$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["submitToGoogleSheets"])({
                 ...formData,
@@ -728,7 +799,21 @@ function CheckoutContent() {
                     totalPrice,
                     orderId
                 }));
-                window.location.href = `/payment?total=${totalPrice}&method=${paymentMethod}&quantity=${quantity}&orderId=${orderId}`;
+                // Redirect based on payment method
+                if (paymentMethod === "online") {
+                    // Map quantity to Cosmofeed / SuperProfile payment pages
+                    const cosmofeedLinks = {
+                        1: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation",
+                        2: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-161",
+                        3: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-744",
+                        4: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-340"
+                    };
+                    const targetUrl = cosmofeedLinks[quantity] || cosmofeedLinks[1];
+                    window.location.href = targetUrl;
+                } else {
+                    // COD flow goes to internal payment confirmation screen
+                    window.location.href = `/payment?total=${totalPrice}&method=${paymentMethod}&quantity=${quantity}&orderId=${orderId}`;
+                }
             } else {
                 setSubmitError(result.message);
             }
@@ -743,7 +828,7 @@ function CheckoutContent() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$components$2f$navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Navbar"], {}, void 0, false, {
                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                lineNumber: 113,
+                lineNumber: 177,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -756,7 +841,7 @@ function CheckoutContent() {
                             children: "Checkout"
                         }, void 0, false, {
                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                            lineNumber: 117,
+                            lineNumber: 181,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -773,20 +858,20 @@ function CheckoutContent() {
                                                     children: "Error:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 188,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: submitError
                                                 }, void 0, false, {
                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                    lineNumber: 125,
+                                                    lineNumber: 189,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 187,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -801,46 +886,67 @@ function CheckoutContent() {
                                                             children: "Payment Method"
                                                         }, void 0, false, {
                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                            lineNumber: 132,
+                                                            lineNumber: 196,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4",
                                                             children: [
-                                                                ("TURBOPACK compile-time falsy", 0) ? /*#__PURE__*/ "TURBOPACK unreachable" : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "p-3 md:p-4 border-2 border-dashed border-border rounded-lg bg-muted/30 text-sm md:text-base text-muted-foreground",
+                                                                ("TURBOPACK compile-time truthy", 1) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: `p-3 md:p-4 border-2 rounded-lg cursor-pointer transition-all ${paymentMethod === "online" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`,
+                                                                    onClick: ()=>setPaymentMethod("online"),
                                                                     children: [
-                                                                        "Online payments are temporarily disabled. Set ",
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                            children: "ENABLE_ONLINE_PAYMENT"
-                                                                        }, void 0, false, {
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "flex items-center gap-2 md:gap-3 mb-2",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                                    type: "radio",
+                                                                                    checked: paymentMethod === "online",
+                                                                                    readOnly: true
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                                                    lineNumber: 208,
+                                                                                    columnNumber: 27
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                                    className: "font-semibold text-sm md:text-base",
+                                                                                    children: "Online Payment (Cosmofeed)"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                                                    lineNumber: 209,
+                                                                                    columnNumber: 27
+                                                                                }, this)
+                                                                            ]
+                                                                        }, void 0, true, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 152,
-                                                                            columnNumber: 71
-                                                                        }, this),
-                                                                        " to ",
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                            children: "true"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 152,
-                                                                            columnNumber: 109
-                                                                        }, this),
-                                                                        " in",
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                            children: "app/checkout/page.tsx"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 153,
+                                                                            lineNumber: 207,
                                                                             columnNumber: 25
                                                                         }, this),
-                                                                        " to restore Razorpay checkout."
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                            className: "text-xs md:text-sm text-muted-foreground ml-7",
+                                                                            children: "Instant UPI, cards & wallets via Cosmofeed secure payment page"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                                            lineNumber: 211,
+                                                                            columnNumber: 25
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                            className: "text-base md:text-lg font-bold text-primary mt-2 ml-7",
+                                                                            children: [
+                                                                                "₹",
+                                                                                BASE_PRICE
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                                            lineNumber: 214,
+                                                                            columnNumber: 25
+                                                                        }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                    lineNumber: 151,
+                                                                    lineNumber: 199,
                                                                     columnNumber: 23
-                                                                }, this),
+                                                                }, this) : /*#__PURE__*/ "TURBOPACK unreachable",
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: `p-3 md:p-4 border-2 rounded-lg cursor-pointer transition-all ${paymentMethod === "cod" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`,
                                                                     onClick: ()=>setPaymentMethod("cod"),
@@ -854,7 +960,7 @@ function CheckoutContent() {
                                                                                     readOnly: true
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                                    lineNumber: 166,
+                                                                                    lineNumber: 232,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -862,13 +968,13 @@ function CheckoutContent() {
                                                                                     children: "Cash on Delivery"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                                    lineNumber: 167,
+                                                                                    lineNumber: 233,
                                                                                     columnNumber: 25
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 165,
+                                                                            lineNumber: 231,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -876,7 +982,7 @@ function CheckoutContent() {
                                                                             children: "Pay on delivery"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 169,
+                                                                            lineNumber: 235,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -890,25 +996,25 @@ function CheckoutContent() {
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 170,
+                                                                            lineNumber: 236,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                    lineNumber: 157,
+                                                                    lineNumber: 223,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                            lineNumber: 133,
+                                                            lineNumber: 197,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                    lineNumber: 131,
+                                                    lineNumber: 195,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -919,7 +1025,7 @@ function CheckoutContent() {
                                                             children: "Shipping Information"
                                                         }, void 0, false, {
                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 243,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -938,7 +1044,7 @@ function CheckoutContent() {
                                                                             className: "px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 180,
+                                                                            lineNumber: 246,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -951,13 +1057,13 @@ function CheckoutContent() {
                                                                             className: "px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 189,
+                                                                            lineNumber: 255,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                    lineNumber: 179,
+                                                                    lineNumber: 245,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -973,7 +1079,7 @@ function CheckoutContent() {
                                                                             className: "px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 201,
+                                                                            lineNumber: 267,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -986,13 +1092,13 @@ function CheckoutContent() {
                                                                             className: "px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 210,
+                                                                            lineNumber: 276,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                    lineNumber: 200,
+                                                                    lineNumber: 266,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1005,7 +1111,7 @@ function CheckoutContent() {
                                                                     className: "w-full px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                    lineNumber: 221,
+                                                                    lineNumber: 287,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1021,7 +1127,7 @@ function CheckoutContent() {
                                                                             className: "px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 232,
+                                                                            lineNumber: 298,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1036,7 +1142,7 @@ function CheckoutContent() {
                                                                                     children: "Select State/UT"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                                    lineNumber: 248,
+                                                                                    lineNumber: 314,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 [
@@ -1081,19 +1187,19 @@ function CheckoutContent() {
                                                                                         children: state
                                                                                     }, state, false, {
                                                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                                        lineNumber: 287,
+                                                                                        lineNumber: 353,
                                                                                         columnNumber: 27
                                                                                     }, this))
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                            lineNumber: 241,
+                                                                            lineNumber: 307,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                    lineNumber: 231,
+                                                                    lineNumber: 297,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1108,19 +1214,68 @@ function CheckoutContent() {
                                                                     className: "w-full px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                    lineNumber: 293,
+                                                                    lineNumber: 359,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                            lineNumber: 178,
+                                                            lineNumber: 244,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                    lineNumber: 176,
+                                                    lineNumber: 242,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "p-4 md:p-8 bg-card border border-border rounded-lg",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                            className: "text-xl md:text-2xl font-bold mb-4 md:mb-6",
+                                                            children: "Referral Code"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                            lineNumber: 375,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "space-y-4 md:space-y-6",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                    type: "text",
+                                                                    name: "referralCode",
+                                                                    placeholder: "Add referral code you will find from the influencer you came here",
+                                                                    value: formData.referralCode,
+                                                                    onChange: handleInputChange,
+                                                                    style: {
+                                                                        textTransform: "uppercase"
+                                                                    },
+                                                                    className: "w-full px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                                    lineNumber: 377,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-xs md:text-sm text-muted-foreground",
+                                                                    children: "Add referral code you will find from the influencer you came here. Orders with referral codes will be processed separately."
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                                    lineNumber: 386,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                            lineNumber: 376,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
+                                                    lineNumber: 374,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1130,19 +1285,19 @@ function CheckoutContent() {
                                                     children: isSubmitting ? "Processing..." : "Continue to Payment"
                                                 }, void 0, false, {
                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                    lineNumber: 308,
+                                                    lineNumber: 393,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 193,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 185,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1155,7 +1310,7 @@ function CheckoutContent() {
                                                 children: "Order Summary"
                                             }, void 0, false, {
                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                lineNumber: 321,
+                                                lineNumber: 406,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1171,7 +1326,7 @@ function CheckoutContent() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                            lineNumber: 325,
+                                                            lineNumber: 410,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1182,18 +1337,18 @@ function CheckoutContent() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                            lineNumber: 326,
+                                                            lineNumber: 411,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                    lineNumber: 324,
+                                                    lineNumber: 409,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                lineNumber: 323,
+                                                lineNumber: 408,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1207,7 +1362,7 @@ function CheckoutContent() {
                                                                 children: "Delivery"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                lineNumber: 332,
+                                                                lineNumber: 417,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1215,13 +1370,13 @@ function CheckoutContent() {
                                                                 children: "4-5 Days"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                lineNumber: 333,
+                                                                lineNumber: 418,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 331,
+                                                        lineNumber: 416,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1232,7 +1387,7 @@ function CheckoutContent() {
                                                                 children: "Shipping"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                lineNumber: 336,
+                                                                lineNumber: 421,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1240,13 +1395,13 @@ function CheckoutContent() {
                                                                 children: shippingFee > 0 ? `₹${shippingFee}` : "FREE"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                lineNumber: 337,
+                                                                lineNumber: 422,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 335,
+                                                        lineNumber: 420,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1257,7 +1412,7 @@ function CheckoutContent() {
                                                                 children: "Tax"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                lineNumber: 340,
+                                                                lineNumber: 425,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1265,19 +1420,19 @@ function CheckoutContent() {
                                                                 children: "Included"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                                lineNumber: 341,
+                                                                lineNumber: 426,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 339,
+                                                        lineNumber: 424,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                lineNumber: 330,
+                                                lineNumber: 415,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1288,7 +1443,7 @@ function CheckoutContent() {
                                                         children: "Total"
                                                     }, void 0, false, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 346,
+                                                        lineNumber: 431,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1299,13 +1454,13 @@ function CheckoutContent() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 347,
+                                                        lineNumber: 432,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                lineNumber: 345,
+                                                lineNumber: 430,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1316,7 +1471,7 @@ function CheckoutContent() {
                                                         children: "✓ Fast & Secure"
                                                     }, void 0, false, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 353,
+                                                        lineNumber: 438,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1324,13 +1479,13 @@ function CheckoutContent() {
                                                         children: "Checkout with confidence"
                                                     }, void 0, false, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 354,
+                                                        lineNumber: 439,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                lineNumber: 352,
+                                                lineNumber: 437,
                                                 columnNumber: 17
                                             }, this),
                                             paymentMethod && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1341,68 +1496,68 @@ function CheckoutContent() {
                                                         children: "Method:"
                                                     }, void 0, false, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 359,
+                                                        lineNumber: 444,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: paymentMethod === "online" ? "Online Payment" : "Cash on Delivery"
                                                     }, void 0, false, {
                                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                        lineNumber: 360,
+                                                        lineNumber: 445,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                                lineNumber: 358,
+                                                lineNumber: 443,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                        lineNumber: 320,
+                                        lineNumber: 405,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                                    lineNumber: 319,
+                                    lineNumber: 404,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                            lineNumber: 119,
+                            lineNumber: 183,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                    lineNumber: 116,
+                    lineNumber: 180,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                lineNumber: 115,
+                lineNumber: 179,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$components$2f$footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                lineNumber: 369,
+                lineNumber: 454,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$components$2f$whatsapp$2d$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WhatsAppButton"], {}, void 0, false, {
                 fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-                lineNumber: 370,
+                lineNumber: 455,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-        lineNumber: 112,
+        lineNumber: 176,
         columnNumber: 5
     }, this);
 }
-_s(CheckoutContent, "HqEqAfa2Xa0AlY14Bgup7/EX0U8=", false, function() {
+_s(CheckoutContent, "UgiOq/21h+6MZ9xEs8w7Ef08Ok0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"]
     ];
@@ -1415,17 +1570,17 @@ function CheckoutPage() {
             children: "Loading..."
         }, void 0, false, {
             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-            lineNumber: 377,
+            lineNumber: 462,
             columnNumber: 25
         }, void 0),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$formula188cmtabletnewdesign$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CheckoutContent, {}, void 0, false, {
             fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-            lineNumber: 378,
+            lineNumber: 463,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/formula188cmtabletnewdesign-main/app/checkout/page.tsx",
-        lineNumber: 377,
+        lineNumber: 462,
         columnNumber: 5
     }, this);
 }

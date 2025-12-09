@@ -1,18 +1,20 @@
 "use client"
 
 import type React from "react"
-import { useState, Suspense } from "react"
+import { useState, Suspense, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { generateOrderId, submitToGoogleSheets } from "@/lib/google-sheets"
+import { generateOrderId, submitToGoogleSheets, submitToReferralSheet } from "@/lib/google-sheets"
+import { useReferralCode } from "@/hooks/useReferralCode"
 
 const ENABLE_ONLINE_PAYMENT = true
 
 function CheckoutContent() {
   const searchParams = useSearchParams()
   const quantity = Number.parseInt(searchParams.get("quantity") || "1")
+  const referralCodeFromHook = useReferralCode()
 
   const BASE_PRICE = 799
   const COD_SHIPPING_FEE = 89
@@ -34,7 +36,24 @@ function CheckoutContent() {
     city: "",
     state: "",
     pinCode: "",
+    referralCode: "",
   })
+
+  // Initialize and update referralCode from hook
+  useEffect(() => {
+    if (referralCodeFromHook) {
+      setFormData((prev) => {
+        // Only update if the value actually changed
+        if (prev.referralCode !== referralCodeFromHook) {
+          return {
+            ...prev,
+            referralCode: referralCodeFromHook,
+          }
+        }
+        return prev
+      })
+    }
+  }, [referralCodeFromHook])
 
   const basePrice = BASE_PRICE
   const shippingFee = paymentMethod === "cod" ? COD_SHIPPING_FEE : 0
@@ -56,9 +75,13 @@ function CheckoutContent() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
+    // Prevent editing referral code if it's auto-filled
+    if (name === "referralCode" && referralCodeFromHook) {
+      return
+    }
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: name === "referralCode" ? value.toUpperCase() : value,
     }))
   }
 
@@ -74,10 +97,59 @@ function CheckoutContent() {
 
     try {
       const orderId = generateOrderId()
+      
+      // If referral code is provided, submit to referral sheet
+      if (formData.referralCode && formData.referralCode.trim() !== "") {
+        const result = await submitToReferralSheet(
+          {
+            ...formData,
+            referralCode: formData.referralCode.toUpperCase(),
+            paymentMethod,
+            quantity,
+            totalPrice,
+          },
+          orderId,
+        )
+
+        if (result.success) {
+          localStorage.setItem(
+            "checkoutData",
+            JSON.stringify({
+              ...formData,
+              paymentMethod,
+              quantity,
+              totalPrice,
+              orderId,
+            }),
+          )
+
+          // Redirect based on payment method
+          if (paymentMethod === "online") {
+            const cosmofeedLinks: Record<number, string> = {
+              1: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation",
+              2: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-161",
+              3: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-744",
+              4: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-340",
+            }
+
+            const targetUrl = cosmofeedLinks[quantity] || cosmofeedLinks[1]
+            window.location.href = targetUrl
+          } else {
+            window.location.href = `/payment?total=${totalPrice}&method=${paymentMethod}&quantity=${quantity}&orderId=${orderId}`
+          }
+          return
+        } else {
+          setSubmitError(result.message)
+          return
+        }
+      }
+
+      // Submit to regular sheet (with referralCode if available)
       const sheetName = paymentMethod === "online" ? "Sheet1" : "Sheet2"
       const result = await submitToGoogleSheets(
         {
           ...formData,
+          referralCode: formData.referralCode?.toUpperCase() || "",
           paymentMethod,
           quantity,
           totalPrice,
@@ -319,6 +391,30 @@ function CheckoutContent() {
                       pattern="[0-9]{6}"
                       className="w-full px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base"
                     />
+                  </div>
+                </div>
+
+                {/* Referral Code */}
+                <div className="p-4 md:p-8 bg-card border border-border rounded-lg">
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Referral Code</h2>
+                  <div className="space-y-4 md:space-y-6">
+                    <input
+                      type="text"
+                      name="referralCode"
+                      placeholder="Add referral code you will find from the influencer you came here"
+                      value={formData.referralCode}
+                      onChange={handleInputChange}
+                      readOnly={!!referralCodeFromHook}
+                      style={{ textTransform: "uppercase" }}
+                      className={`w-full px-3 md:px-4 py-2 md:py-3 border border-border rounded-md bg-background text-sm md:text-base ${
+                        referralCodeFromHook ? "bg-muted/50 cursor-not-allowed" : ""
+                      }`}
+                    />
+                    <p className="text-xs md:text-sm text-muted-foreground">
+                      {referralCodeFromHook
+                        ? "Referral code has been automatically applied from your referral link."
+                        : "Add referral code you will find from the influencer you came here. Orders with referral codes will be processed separately."}
+                    </p>
                   </div>
                 </div>
 

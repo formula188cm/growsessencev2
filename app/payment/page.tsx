@@ -8,6 +8,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { CheckCircle2 } from "lucide-react"
+import { getCheckoutUrl } from "@/lib/referral-utils"
 
 const ENABLE_ONLINE_PAYMENT = true
 
@@ -180,7 +181,7 @@ function PaymentContent() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
-                  href={`/checkout?quantity=${quantity}`}
+                  href={getCheckoutUrl(Number.parseInt(quantity))}
                   className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
                 >
                   Switch to Cash on Delivery
