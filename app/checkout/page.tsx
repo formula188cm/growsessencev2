@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-import { useState, Suspense, useEffect } from "react"
+import React, { useState, Suspense, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
@@ -17,7 +16,6 @@ function CheckoutContent() {
   const referralCodeFromHook = useReferralCode()
 
   const BASE_PRICE = 1499
-  const COD_SHIPPING_FEE = 0
  
 
 
@@ -42,7 +40,7 @@ function CheckoutContent() {
   // Initialize and update referralCode from hook
   useEffect(() => {
     if (referralCodeFromHook) {
-      setFormData((prev) => {
+      setFormData((prev: typeof formData) => {
         // Only update if the value actually changed
         if (prev.referralCode !== referralCodeFromHook) {
           return {
@@ -64,14 +62,6 @@ function CheckoutContent() {
 
  
 
-  const deliveryDate = new Date()
-  deliveryDate.setDate(deliveryDate.getDate() + 5)
-  const formattedDeliveryDate = deliveryDate.toLocaleDateString("en-IN", {
-    weekday: "short",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -79,7 +69,7 @@ function CheckoutContent() {
     if (name === "referralCode" && referralCodeFromHook) {
       return
     }
-    setFormData((prev) => ({
+    setFormData((prev: typeof formData) => ({
       ...prev,
       [name]: name === "referralCode" ? value.toUpperCase() : value,
     }))

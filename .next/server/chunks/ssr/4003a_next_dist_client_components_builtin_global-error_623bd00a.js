@@ -1,0 +1,3 @@
+module.exports=[75546,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(43192);a.n(d("[project]/formula188cmtabletnewdesign-main/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},42113,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(43192);a.n(d("[project]/formula188cmtabletnewdesign-main/node_modules/next/dist/client/components/builtin/global-error.js"))},50309,a=>{"use strict";a.i(75546);var b=a.i(42113);a.n(b)}];
+
+//# sourceMappingURL=4003a_next_dist_client_components_builtin_global-error_623bd00a.js.map
