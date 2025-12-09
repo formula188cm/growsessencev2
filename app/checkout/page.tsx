@@ -16,8 +16,8 @@ function CheckoutContent() {
   const quantity = Number.parseInt(searchParams.get("quantity") || "1")
   const referralCodeFromHook = useReferralCode()
 
-  const BASE_PRICE = 799
-  const COD_SHIPPING_FEE = 89
+  const BASE_PRICE = 1499
+  const COD_SHIPPING_FEE = 0
  
 
 
@@ -56,7 +56,7 @@ function CheckoutContent() {
   }, [referralCodeFromHook])
 
   const basePrice = BASE_PRICE
-  const shippingFee = paymentMethod === "cod" ? COD_SHIPPING_FEE : 0
+  const shippingFee = 0 // Free shipping for all orders
   const subtotal = basePrice * quantity
   const totalPrice = subtotal + shippingFee
 
@@ -257,7 +257,7 @@ function CheckoutContent() {
                         <h3 className="font-semibold text-sm md:text-base">Cash on Delivery</h3>
                       </div>
                         <p className="text-xs md:text-sm text-muted-foreground ml-7">Pay on delivery</p>
-                        <p className="text-base md:text-lg font-bold text-primary mt-2 ml-7">₹{BASE_PRICE} + ₹{COD_SHIPPING_FEE} shipping</p>
+                        <p className="text-base md:text-lg font-bold text-primary mt-2 ml-7">₹{BASE_PRICE}</p>
                     </div>
                   </div>
                 </div>

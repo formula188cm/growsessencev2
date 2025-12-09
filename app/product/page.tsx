@@ -19,8 +19,8 @@ export default function ProductPage() {
     }
   }
 
-  const price = 1399
-  const discountedPrice = 799
+  const price = 2499
+  const discountedPrice = 1499
   const savings = price - discountedPrice
   const discountPercent = Math.round((savings / price) * 100)
 
