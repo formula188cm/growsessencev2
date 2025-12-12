@@ -116,10 +116,10 @@ function CheckoutContent() {
           // Redirect based on payment method
           if (paymentMethod === "online") {
             const cosmofeedLinks: Record<number, string> = {
-              1: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation",
-              2: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-161",
-              3: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-744",
-              4: "https://superprofile.bio/vp/grow-essence--100--guaranteed-hair-transformation-340",
+              1: "https://superprofile.bio/vp/D_UdxYfu",
+              2: "https://superprofile.bio/vp/LUHo0b9M",
+              3: "https://superprofile.bio/vp/QRnPZ-Ge",
+              4: "https://superprofile.bio/vp/ZnwiLImV",
             }
 
             const targetUrl = cosmofeedLinks[quantity] || cosmofeedLinks[1]
